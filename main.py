@@ -1,4 +1,5 @@
 from pprint import pprint
+import matplotlib.pyplot as plt
 import random
 
 diccionario = {
@@ -37,6 +38,30 @@ if __name__ == '__main__':
         diccionario['dado'][valorDados] += 1
 
     pprint(diccionario)
+
+    plt.figure()
+    clavesCara = diccionario['moneda']['cara'].keys()
+    valoresCara = diccionario['moneda']['cara'].values()
+    plt.plot(clavesCara, valoresCara)
+    plt.xlabel("Ocurrencias cara")
+    plt.show()
+
+
+    plt.figure()
+    clavesCruz = diccionario['moneda']['cruz'].keys()
+    valoresCruz = diccionario['moneda']['cruz'].values()
+    plt.plot(clavesCruz, valoresCruz)
+    plt.xlabel("Ocurrencias cruz")
+    plt.show()
+
+    plt.figure()
+    clavesDados = diccionario['dado'].keys()
+    valoresDados = diccionario['dado'].values()
+    plt.plot(clavesDados, valoresDados)
+    plt.xlabel("Ocurrencias dado")
+    plt.show()
+
+
 
 
 
